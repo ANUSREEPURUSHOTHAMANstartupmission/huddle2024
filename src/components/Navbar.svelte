@@ -108,7 +108,7 @@
         <nav>
             <ul class=" md:text-sm gap-2 font-data">
                     <li on:click="{()=> menu_open = !menu_open }" class="px-5 py-2 transform hover:bg-gray-400 transition duration-500 hover:scale-100">
-                        <a href="/2023"  class="md:text-white cursor-pointer text-white font-bold hover:text-black uppercase ">Home</a>
+                        <a href="/#home"  class="md:text-white cursor-pointer text-white font-bold hover:text-black uppercase ">Home</a>
                     </li>
 
                     <li on:click="{()=> menu_open = !menu_open }" class="px-5 py-2 transform hover:bg-gray-400 transition duration-500 hover:scale-100 md:hidden flex">
