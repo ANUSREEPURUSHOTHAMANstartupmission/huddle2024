@@ -41,7 +41,7 @@
 {#if popup_open}
 
   <div class="" >
-        <div  class="fixed inset-0 flex  items-center justify-center z-50 bg-black bg-opacity-50 ">
+        <div  class="fixed inset-0 flex  items-center justify-center z-50 bg-black bg-opacity-50 m-6 ">
     
             <div class=" bg-white  p-6">
 
