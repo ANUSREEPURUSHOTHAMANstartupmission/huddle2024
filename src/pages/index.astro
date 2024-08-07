@@ -1,0 +1,660 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Speakers from '../components/Speakers.svelte';
+import Speakers2023 from '../components/Speakers2023.svelte';
+import TopBar from "../components/TopBar.astro";
+
+
+import Gallery from '../components/Gallery.astro';
+import Videogallery from '../components/Videogallery.svelte';
+import Preloader from '../components/Preloader.astro';
+
+import Hero from '../components/newhome.astro';
+
+import Whatsapp from '../components/Whatsapp.astro';
+import ParallelTracks from '../components/ParallelTracks.astro';
+
+import Partner from "../components/Partners.svelte";
+import Navbar from "../components/Navbar.svelte";
+import SocialLinks from "../components/SocialLinks.astro";
+
+---
+
+<Layout  title="Kerala Startup Mission">
+
+	<style is:global>
+		@import '../../node_modules/plyr/dist/plyr.css';
+	</style>
+
+  <Preloader></Preloader> 
+
+  <Hero></Hero>
+  <!-- <Earth></Earth> -->
+
+  <Whatsapp></Whatsapp>
+
+  <Navbar client:load></Navbar>
+
+
+  <div class="early-bird">
+    <img src="/img/Freedom50IND.png" onclick="booking_popup('huddle-global-2024')" class="h-24 md:h-40 cursor-pointer" />
+  </div>
+
+	<div id="about" class="px-5 py-24 bg-black">
+    <div class="container mx-auto">
+
+      <div class="flex flex-col md:flex-row gap-10 items-center">
+      
+        <div class="md:w-1/2 text-justify leading-relaxed  text-white">
+          <div class="  mb-5 inline-block relative"> 
+            <div class="mb-2 text-5xl text-yellow-400 font-spl transform -rotate-12 -top-10 -left-5 md:-left-10 absolute">An extravaganza awaits you</div>
+            <div class="text-5xl text- font-black">About Huddle</div>
+        
+          </div>
+
+          <div class="mb-3">Kerala popularly known as “Gods Own Country” is coming up with the sixth Edition of HUDDLE as HUDDLE GLOBAL, one of the most coveted events in Tech Startup Ecosystem in India</div>
+          <div class="mb-3">Huddle is the focal point for tech start-ups and other relevant stakeholders of the entrepreneurial ecosystem including the government, investors, mentors, industry etc.</div>
+          <div class="mb-5">Huddle Global is envisaged in a way that it offers a platform for startups to showcase their products and interact with a clutch of technology and industry leaders on ways to move ahead in the ever growing tech world in the most informal way, thereby creating deep interactions</div>
+         
+          <div class=" flex sm:flex-row flex-col ">
+           
+          </div>
+          
+        </div>
+        
+        <div class="md:w-1/2">
+          
+          <div class="relative flex items-center justify-center youtube-button cursor-pointer">
+            <img src="/img/flag.png" alt="" class="w-[30rem] pointer-events-none">
+            <img src="/img/play.png" alt="" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <section  class="px-5 py-24 bg-huddle" id="speakers">
+    <div class="container relative mx-auto">
+      
+      <img src="/img/dots.svg" alt="dots" class="absolute w-20 opacity-25 top-2 left-2">
+      <img src="/img/dots.svg" alt="dots" class="absolute w-20 opacity-25 bottom-2 right-2">
+      <div class=" mx-auto items-center justify-center mb-20">
+        <h1 class=" text-5xl text-yellow-300 font-spl text-center">Powerpacked speakers awaits you</h1>
+        <h1 class=" text-5xl font-black text-white text-center">Our Speakers</h1>
+      </div>
+
+
+      <div class="container mx-auto mb-20" id="government">
+        <Speakers title="Government" label="" slug="huddle-global-2024" category="government" client:load/>
+      </div>
+
+      <div class="container mx-auto mb-20" id="industry">
+        <Speakers title="Industry" label="" slug="huddle-global-2024" category="speaker" client:load/>
+      </div>
+
+      <div class="container mx-auto mb-20" id="industry">
+        <Speakers title="Investors" label="" slug="huddle-global-2024" category="investor" client:load/>
+      </div>
+
+     
+    </div>
+
+  
+  </section> 
+
+  <section  class="px-5 py-24 bg-black" id="previous_speakers">
+    <div class="container relative mx-auto">
+      
+      <img src="/img/dots.svg" alt="dots" class="absolute w-20 opacity-25 top-2 left-2">
+      <img src="/img/dots.svg" alt="dots" class="absolute w-20 opacity-25 bottom-2 right-2">
+     
+
+      <div class=" mx-auto items-center justify-center mb-20">
+        <h1 class=" text-5xl text-yellow-300 font-spl text-center">Inspiring Voices from last year</h1>
+        <h1 class=" text-3xl font-black text-white text-center">Speakers @2023</h1>
+      </div>
+
+
+      <div class="container mx-auto mb-20" id="government">
+        <Speakers2023 title="Government" label="" slug="huddle-global-2023" category="government" client:load/>
+      </div>
+
+      <div class="container mx-auto mb-20" id="industry">
+        <Speakers2023 title="Industry" label="" slug="huddle-global-2023" category="speaker" client:load/>
+      </div>
+
+    </div>
+  </section> 
+
+
+  <section class="px-5  pb-24 pt-10 bg-black" id="tracks">
+    <div class=" mb-8 text-center">
+      <h1 class="text-3xl font-black text-white">Tracks</h1>
+      <p class=" text-4xl text-yellow-400 font-spl">What's in store for you</p>
+    </div>
+    <div class="container mx-auto">
+      <ParallelTracks></ParallelTracks>
+    </div>
+  </section>
+
+
+	<div class=" z-50 fixed top-0 left-0  hidden w-full h-screen p-5 bg-black bg-opacity-50 youtube-popup backdrop-filter backdrop-blur-sm">
+    <div class="absolute flex items-center justify-center w-10 h-10 border-2 rounded-full cursor-pointer close-video top-5 right-5">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white icon icon-tabler icon-tabler-x" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </div>
+    <div class="absolute w-full max-w-2xl transform -translate-x-1/2 -translate-y-1/2 bg-white left-1/2 top-1/2 video-container">
+      
+      <div id="youtube_player" data-plyr-provider="youtube" data-plyr-embed-id="JgT2Ee0G0cM"></div>
+      
+    </div>
+  </div>
+
+ 
+
+ 
+ 
+	<section class=" pt-24 bg-black">
+    <div class="  flex flex-col mx-auto items-center justify-center container p-8">
+     <div class=" mb-8 text-center">
+      <p class=" text-4xl text-yellow-400 font-spl">Highlights</p>
+      <h1 class="text-3xl font-black text-white">@ Huddle Global 2023</h1>
+     </div>
+     <div class=" overflow-clip w-screen" >
+        <Gallery ></Gallery>   
+     </div>
+    </div>
+  </section>
+
+  <section class=" pb-24 bg-black">
+    <div class=" flex flex-col mx-auto items-center justify-center container  p-8">
+      <div class=" mb-8 text-center">
+        <p class=" text-4xl text-yellow-300 font-spl">Relive the Highlights</p>
+        <!-- <h1 class="text-3xl font-black text-white">@ Huddle Global 2023</h1> -->
+
+      </div>
+        <Videogallery client:load></Videogallery>   
+    </div>
+    <div class=" mx-auto items-center justify-center flex ">
+      <a class="button " href="https://www.youtube.com/playlist?list=PLJ7jpx6qQxmYTWKujcDyRG_EDM-JwNW7I"  target="_blank">View More</a>
+
+    </div>
+  </section>
+
+  <div class="py-24 bg-huddle">
+    <div class="mb-5 text-center">
+      <h1 class="mb-3 text-3xl font-black text-white">Partners</h1>
+      <p class="text-5xl font-spl text-yellow-400">Our partners cherishing the event</p>
+    </div>
+    <Partner client:load></Partner>
+
+  </div>
+
+  <section class="px-5 pt-32  bg-black bg-cover ">
+    <div class="container mx-auto text-center z-10 relative">
+      <div class="mb-10">
+        <p class="text-5xl font-spl text-yellow-400">Join us for a powerpacked three day conference</p>
+        <h1 class="mb-3 text-xl font-black text-white">Download Now</h1>
+        <h1 class="mb-3 text-3xl font-black text-huddle">Huddle Global App</h1>
+
+      </div>
+      <div class="text-center">
+        <div>
+          <div class=" flex flex-wrap items-center justify-center gap-8  ">
+            <a href="https://apps.apple.com/in/app/huddle-global/id1658986073" target="_blank"><img src="/img/appstore.png" class=" w-36 border rounded-md border-white  shadow-2xl"></a>
+            
+            <a href="https://play.google.com/store/apps/details?id=com.huddleglobal" target="_blank"><img src="/img/playstore.png" class="w-36 border rounded-md border-white  shadow-2xl"></a>
+        </div>
+        </div>
+        <!-- <button onclick="popup('gold-huddle-global-2023-343210');" class="px-5 py-3 spl_cursor font-bold text-white transition bg-blue-500 rounded-full hover:bg-blue-700">
+          Gold Pass
+        </button> -->
+        <!-- <button onclick="popup('diamondpass-huddle-global-2023-343210');" class="px-5 py-3 spl_cursor font-bold text-white transition bg-blue-500 rounded-full hover:bg-blue-700">
+          Diamond Pass
+        </button> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="px-8 py-16 sm:px-24  bg-black" >
+    <div class="flex flex-col items-center justify-center sm:flex-row">
+      <div class="flex flex-col items-center text-center text-white ">
+        <img src="/img/huddle_white.svg" alt="KSUM Logo" class="w-48">
+        <p>Point of Contact:</p>
+        <div class=" md:flex-row flex-col flex gap-4">
+          <p class="text-xl font-bold">
+            Vishal B  <span class="text-base font-normal"><a href="mailto:vishal@startupmission.in">vishal@startupmission.in</a></span>
+          </p>
+          <p class="text-xl font-bold">
+            Nasif NM  <span class="text-base font-normal"><a href="mailto:nasif@startupmission.in">nasif@startupmission.in</a></span>
+          </p>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="p-5 text-center text-white flex md:flex-row flex-col gap-6 md:items-center md:justify-center" style="background-color: #222;">
+    <div>
+      <ul class="flex space-x-4">
+        <SocialLinks></SocialLinks>
+      </ul>
+    </div>
+   <div class=" flex text-center items-center justify-center"> Copyright © 2024 Kerala Startup Mission. All Rights Reserved.</div>
+  </section>
+
+
+  <div class="fixed left-0 bottom-12 m-4  z-50 bg-white shadow-md rounded-md   md:w-72 animate__animated  animate__fadeInDown" id="pop_up" style="display: none;">
+    <div class="relative overflow-hidden">
+      <img src="/img/2024/sponsorship.png" alt="Your Image" class=" ">
+      <div class="absolute bottom-0 left-0  text-white md:p-2.5 p-1 bg-cover bg-bottom bg- w-full text-center uppercase md:text-lg text-sm font-bold  bg-sdg1 bg-opacity-90">
+        <div class="flex">
+          <a href="https://forms.zohopublic.com/keralastartupmission/form/SponsorshipHuddleGlobal/formperma/VR8pwlKkgjpOg1pKVUf0i8pgFgXZz9s6VN-vE73-CfI" class=" cursor-pointer border text-sm hover:bg-huddle hover:text-white border-huddle p-2 m-auto text-huddle" target="_blank" >Apply Now</a>
+          <a href="https://drive.google.com/file/d/1-1APY44ZjLZR7Dzs6mz_Lq6FtaYUC6Lx/view?usp=sharing" class="p-2 border border-huddle m-auto text-huddle hover:bg-huddle hover:text-white text-sm cursor-pointer" target="_blank" >Sponsorship Deck</a>
+        </div>
+      </div>
+      
+    </div>
+    <button class="absolute -top-2 -left-2 rounded-full bg-slate-900 text-white " id="closePopup">
+      <svg class="h-5 w-5" fill="white" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div> 
+
+  <style is:inline>
+    
+    .early-bird{
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      z-index: 50;
+    }
+
+    .loaded .early-bird{
+      display: block;
+    }
+
+  </style>
+
+  <script src="https://eventmanager.startupmission.in/api/script/booking" is:inline></script>
+
+	<script>
+		
+		import Plyr from 'plyr';
+		var player = new Plyr("#youtube_player");
+	
+		document.querySelector('.youtube-button').addEventListener('click', function () {
+			document.querySelector('.youtube-popup').classList.remove('hidden');
+			player.play();
+		});
+	
+		document.querySelector('.close-video').addEventListener('click', function () {
+			document.querySelector('.youtube-popup').classList.add('hidden');
+			player.stop();
+		});
+	
+	</script>
+
+  <script>
+    
+  </script>
+
+</Layout>
+
+<style lang="scss" is:global>
+ #pop_up{
+  display: none;
+  
+ }
+
+ .scrolled{ 
+    #pop_up{
+      display: block;
+    }
+  }
+</style>
+
+<style is:global>
+   button.collision {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    display: block;
+    height: 50px;
+    width: 150px;
+    overflow: hidden;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    border: 1px solid #C70000;
+  }
+
+  button.collision::before,
+  button.collision::after {
+    position: absolute;
+    content: '';
+    width: 20px;
+    height: 20px;
+    background:#C70000;
+    top: 50%;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  button.collision::before {
+    transform: translate(-50%, -50%);
+    left: -20px;
+  }
+
+  button.collision::after {
+    transform: translate(50%, -50%);
+    right: -20px;
+  }
+
+  button.collision:hover::before {
+    animation: move-left .8s both;
+    animation-direction: alternate;
+  }
+  button.collision:hover::after {
+    animation: move-right .8s both;
+    animation-direction: alternate;
+  }
+
+  button.collision:hover{
+    animation: button-color .8s both;
+  }
+
+  @keyframes button-color {
+    0% {
+      color: #fff;
+    }
+    100% {
+      color: #c70000;
+    }
+  }
+
+  @keyframes move-left {
+    0% {
+      left: -20px;
+    }
+    50% {
+      left: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      left: 50%;
+      height: 400px;
+      width: 400px;
+    }
+  }
+
+  @keyframes move-right {
+    0% {
+      right: -20px;
+    }
+    50% {
+      right: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    100% {
+      right: 50%;
+      height: 400px;
+      width: 400px;
+    }
+  }
+
+  .button{
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 45px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 50px;
+    border: 2px solid #c70000;
+    transition: all 2s ease;
+
+    &:hover{
+      color: #fff;
+      position: relative;
+      z-index: 1;
+
+      &::before{
+        left: 0%;
+        right: auto;
+        width: 100%;
+        z-index: -1;
+      }
+
+      &::after{
+
+      }
+    }
+
+    &::before{
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      height: 100%;
+      width: 0px;
+      content: '';
+      background: #c70000;
+      transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+    }
+
+    &::after{
+      content: "";
+      position: absolute;
+      height: 0%;
+      left: 50%;
+      top: 50%;
+      width: 150%;
+      transition: all 0.75s ease 0s;
+    }
+  }
+</style>
+
+<style is:global>
+  button.collision {
+   text-decoration: none;
+   color: #fff;
+   text-transform: uppercase;
+   font-family: 'Poppins', sans-serif;
+   font-weight: bold;
+   display: block;
+   height: 50px;
+   width: 150px;
+   overflow: hidden;
+   line-height: 50px;
+   text-align: center;
+   position: relative;
+   border: 1px solid #C70000;
+ }
+
+ button.collision::before,
+ button.collision::after {
+   position: absolute;
+   content: '';
+   width: 20px;
+   height: 20px;
+   background:#C70000;
+   top: 50%;
+   border-radius: 50%;
+   z-index: -1;
+ }
+
+ button.collision::before {
+   transform: translate(-50%, -50%);
+   left: -20px;
+ }
+
+ button.collision::after {
+   transform: translate(50%, -50%);
+   right: -20px;
+ }
+
+ button.collision:hover::before {
+   animation: move-left .8s both;
+   animation-direction: alternate;
+ }
+ button.collision:hover::after {
+   animation: move-right .8s both;
+   animation-direction: alternate;
+ }
+
+ button.collision:hover{
+   animation: button-color .8s both;
+ }
+
+ @keyframes button-color {
+   0% {
+     color: #fff;
+   }
+   100% {
+     color: #c70000;
+   }
+ }
+
+ @keyframes move-left {
+   0% {
+     left: -20px;
+   }
+   50% {
+     left: 50%;
+     width: 20px;
+     height: 20px;
+   }
+   100% {
+     left: 50%;
+     height: 400px;
+     width: 400px;
+   }
+ }
+
+ @keyframes move-right {
+   0% {
+     right: -20px;
+   }
+   50% {
+     right: 50%;
+     width: 20px;
+     height: 20px;
+   }
+   100% {
+     right: 50%;
+     height: 400px;
+     width: 400px;
+   }
+ }
+
+ .button_black{
+   position: relative;
+   display: block;
+   width: 200px;
+   height: 45px;
+   line-height: 40px;
+   color: #fff;
+   font-size: 16px;
+   font-weight: 500;
+   text-align: center;
+   text-transform: uppercase;
+   overflow: hidden;
+   border-radius: 50px;
+   border: 2px solid #0f0e0e;
+   transition: all 2s ease;
+
+   &:hover{
+     color: #fff;
+     position: relative;
+     z-index: 1;
+
+     &::before{
+       left: 0%;
+       right: auto;
+       width: 100%;
+       z-index: -1;
+     }
+
+     &::after{
+
+     }
+   }
+
+   &::before{
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     height: 100%;
+     width: 0px;
+     content: '';
+     background: #0e0d0d;
+     transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+   }
+
+   &::after{
+     content: "";
+     position: absolute;
+     height: 0%;
+     left: 50%;
+     top: 50%;
+     width: 150%;
+     transition: all 0.75s ease 0s;
+   }
+ }
+</style>
+
+<script is:inline>
+	function functionshow(d) {
+    document.getElementById('pop_up').style.display = 'block';
+	}
+</script>
+
+<script is:inline>
+  document.getElementById('closePopup').addEventListener('click', function() {
+          document.getElementById('pop_up').style.display = 'none';
+      });
+</script>
+
+
+<script>
+  document.getElementById('speakers_show').addEventListener('click', function() {
+      const toggleElement = document.getElementById('previous_speakers');
+      const button_id = document.getElementById('speakers_show');
+      const button_idd = document.getElementById('speakers_hide');
+
+      toggleElement.classList.remove('hidden');
+      button_id.classList.add('hidden');
+      button_idd.classList.remove('hidden');
+  });
+</script>
+
+
+<script>
+  document.getElementById('speakers_hide').addEventListener('click', function() {
+      const toggleElement = document.getElementById('previous_speakers');
+      const button_id = document.getElementById('speakers_show');
+      const button_idd = document.getElementById('speakers_hide');
+
+      toggleElement.classList.add('hidden');
+      button_id.classList.remove('hidden');
+      button_idd.classList.remove('hidden');
+
+
+  });
+</script>
