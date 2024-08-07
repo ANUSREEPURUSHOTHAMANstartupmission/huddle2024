@@ -54,19 +54,17 @@
                                     <img src="/img/{program.image}" class="w-full  h-64  mx-auto my-auto flex">
                                 </div>
                                 <div class=" md:w-1/2 flex flex-col py-4">
-                                    <div class=" text-black  text-xl font-extralight" >{program.title}</div>
-                                    <div class=" text-black  text-xs font-extralight py-3" >{program.address}</div>
-                                    <div class=" text-black  text-xs font-extralight py-3" >{program.number}</div>
+                                    <div class=" text-black  text-xl font-extralight text-start" >{program.title}</div>
+                                    <div class=" text-black  text-xs font-extralight py-3 text-start" >{program.address}</div>
+                                    <div class=" text-black  text-xs font-extralight py-3 text-start" >{program.number}</div>
                                     <div class=" flex gap-4 pt-6">
                                         {#if program.website}
-                                        <div class=" text-white bg-huddle px-4 py-2">
-                                            <a href={program.website??"#"}  target="_blank">WEBSITE</a>
-    
+                                        <div class=" text-white bg-huddle px-3 py-1">
+                                            <a href={program.website??"#"} class="text-sm"  target="_blank">WEBSITE</a>
                                         </div>
                                         {/if}
-                                        <div class=" text-black border-2 bg-white px-4 py-2 border-black">
-                                            <a href={program.location??"#"}  target="_blank">LOCATION</a>
-    
+                                        <div class=" text-black border-2 bg-white px-3 py-1 border-black">
+                                            <a href={program.location??"#"}  class="text-sm" target="_blank">LOCATION</a>
                                         </div>
                                     </div>
                                 </div>
